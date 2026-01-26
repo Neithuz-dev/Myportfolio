@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Neithal Prince — Portfolio</title>
+  <title>Neithal Prince — Creative Developer</title>
 
   <!-- Bootstrap CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -12,373 +12,530 @@
   <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
   <!-- Font Awesome -->
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
-  <!-- Google Font -->
-  <link
-    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&family=Poppins:wght@600;700;800&display=swap"
-    rel="stylesheet">
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-  <div class="bg-animated"></div>
+  <!-- Animated Mesh Background -->
+  <div class="mesh-background">
+    <div class="mesh-gradient mesh-gradient-1"></div>
+    <div class="mesh-gradient mesh-gradient-2"></div>
+    <div class="mesh-gradient mesh-gradient-3"></div>
+  </div>
+
+  <!-- Floating Particles -->
+  <div class="particles">
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+  </div>
 
   <div class="content-wrapper">
-    <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg fixed-top">
+    <!-- Navbar with Glass Effect -->
+    <nav class="navbar-custom">
       <div class="container">
-        <a class="navbar-brand" href="#">MY Portfolio.</a>
-        <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#nav">
-          <i class="fas fa-bars text-light"></i>
-        </button>
-        <div class="collapse navbar-collapse" id="nav">
-          <ul class="navbar-nav ms-auto">
-            <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
-            <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
-            <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
-            <li class="nav-item"><a class="nav-link" href="#experience">Experience</a></li>
-            <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
-          </ul>
+        <div class="nav-content">
+          <a class="logo-text" href="#">
+            <span class="logo-bracket">&lt;</span>
+            <span class="logo-name">NP</span>
+            <span class="logo-bracket">/&gt;</span>
+          </a>
+          
+          <div class="nav-menu" id="navMenu">
+            <a class="nav-item" href="#about" data-text="About">About</a>
+            <a class="nav-item" href="#skills" data-text="Skills">Skills</a>
+            <a class="nav-item" href="#projects" data-text="Work">Work</a>
+            <a class="nav-item" href="#contact" data-text="Contact">Contact</a>
+            <a href="assests/RESUME.pdf" class="nav-cta" download>
+              <span>Resume</span>
+              <i class="fas fa-arrow-right"></i>
+            </a>
+          </div>
+
+          <button class="mobile-toggle" id="mobileToggle">
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
         </div>
       </div>
     </nav>
 
-    <!-- Hero Section -->
-    <header class="hero">
-      <div class="hero-gradient hero-gradient-1"></div>
-      <div class="hero-gradient hero-gradient-2"></div>
-
+    <!-- Hero Section with 3D Effect -->
+    <section class="hero-section">
       <div class="container">
-        <div class="row align-items-center">
-          <div class="col-lg-7" data-aos="fade-right">
-            <div class="mb-3">
-              <span class="badge-gradient">
-                <i class="fas fa-circle me-2" style="font-size: 0.5rem; color: #0a0a0a;"></i>
-                Available for work
-              </span>
+        <div class="hero-grid">
+          <div class="hero-content" data-aos="fade-up">
+            <div class="status-badge">
+              <span class="status-dot"></span>
+              <span>Available for opportunities</span>
             </div>
 
-            <h1>
-              Hi, I'm<br>
-              <span class="gradient-text">Neithal Prince</span>
+            <h1 class="hero-title">
+              <span class="title-line">Building Digital</span>
+              <span class="title-line title-gradient">Experiences</span>
+              <span class="title-line">That Matter</span>
             </h1>
 
-            <p class="lead">
-              Aspiring Software Developer specializing in full-stack web development and machine learning.
-              Turning ideas into elegant, scalable solutions.
+            <p class="hero-description">
+              Full-stack developer & ML enthusiast crafting elegant solutions to complex problems. 
+              Specialized in building scalable web applications with modern technologies.
             </p>
 
-            <div class="d-flex gap-3 mb-4 flex-wrap">
-              <a href="#projects" class="btn btn-gradient btn-lg">
-                <i class="fas fa-code me-2"></i>View Projects
+            <div class="hero-actions">
+              <a href="#projects" class="btn-primary">
+                <span>View Work</span>
+                <div class="btn-shine"></div>
               </a>
-              <a href="#contact" class="btn btn-outline-gradient btn-lg">
-                <i class="fas fa-envelope me-2"></i>Get in Touch
-              </a>
-              <a href="assests\RESUME.pdf" class="btn btn-outline-gradient btn-lg" download>
-                <i class="fas fa-download me-2"></i>Download Resume
-              </a>
-            </div>
-
-            <div class="social-links d-flex gap-3">
-              <a href="https://github.com/Neithuz-dev" target="_blank" aria-label="GitHub">
-                <i class="fab fa-github fa-lg"></i>
-              </a>
-              <a href="https://linkedin.com/in/neithal-prince-74478a261" target="_blank" aria-label="LinkedIn">
-                <i class="fab fa-linkedin fa-lg"></i>
-              </a>
-              <a href="mailto:neithalprince@gmail.com" aria-label="Email">
-                <i class="fas fa-envelope fa-lg"></i>
+              <a href="#contact" class="btn-secondary">
+                <span>Let's Talk</span>
+                <i class="fas fa-arrow-right"></i>
               </a>
             </div>
-          </div>
 
-          <div class="col-lg-5 text-center mt-5 mt-lg-0" data-aos="fade-left">
-            <div class="avatar-wrapper">
-              <div class="avatar-glow"></div>
-              <img src=" assests/Gemini_Generated_Image_gfrvchgfrvchgfrv.png" alt="Neithal Prince" class="avatar">
-            </div>
-          </div>
-        </div>
-      </div>
-    </header>
-
-    <!-- About Section -->
-    <section id="about" class="py-5">
-      <div class="container py-5">
-        <div class="row gy-5">
-          <div class="col-12" data-aos="fade-up">
-            <h2 class="section-heading">About Me</h2>
-            <p class="text-muted mt-4" style="font-size: 1.1rem; max-width: 800px;">
-              Motivated Computer Science Engineering student with a passion for creating innovative software solutions.
-              I specialize in full-stack development and have hands-on experience with modern web technologies and
-              machine learning frameworks.
-            </p>
-          </div>
-
-          <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
-            <div class="stat-box">
-              <div class="stat-number">7.02</div>
-              <div class="stat-label">CGPA</div>
+            <div class="hero-stats">
+              <div class="stat-item">
+                <div class="stat-number">7.02</div>
+                <div class="stat-label">CGPA</div>
+              </div>
+              <div class="stat-divider"></div>
+              <div class="stat-item">
+                <div class="stat-number">2+</div>
+                <div class="stat-label">Projects</div>
+              </div>
+              <div class="stat-divider"></div>
+              <div class="stat-item">
+                <div class="stat-number">1st</div>
+                <div class="stat-label">Prize</div>
+              </div>
             </div>
           </div>
 
-          <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
-            <div class="stat-box">
-              <div class="stat-number">2</div>
-              <div class="stat-label">Projects Completed</div>
+          <div class="hero-visual" data-aos="fade-left">
+            <div class="profile-card">
+              <div class="profile-glow"></div>
+              <div class="profile-image-wrapper">
+                <img src="assests/Gemini_Generated_Image_gfrvchgfrvchgfrv.png" alt="Neithal Prince" class="profile-image">
+                <div class="profile-border"></div>
+              </div>
+              <div class="profile-info">
+                <h3>Neithal Prince</h3>
+                <p>Full-Stack Developer</p>
+                <div class="social-icons">
+                  <a href="https://github.com/Neithuz-dev" target="_blank" class="social-icon">
+                    <i class="fab fa-github"></i>
+                  </a>
+                  <a href="https://linkedin.com/in/neithal-prince-74478a261" target="_blank" class="social-icon">
+                    <i class="fab fa-linkedin"></i>
+                  </a>
+                  <a href="mailto:neithalprince@gmail.com" class="social-icon">
+                    <i class="fas fa-envelope"></i>
+                  </a>
+                </div>
+              </div>
             </div>
-          </div>
 
-          <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
-            <div class="stat-box">
-              <div class="stat-number">1st</div>
-              <div class="stat-label">Prize Winner</div>
-            </div>
-          </div>
-
-          <div class="col-md-6" data-aos="fade-up" data-aos-delay="100">
-            <div class="card-glass">
-              <h5 class="mb-3"><i class="fas fa-graduation-cap me-2" style="color: var(--accent-primary);"></i>Education
-              </h5>
-              <p class="mb-2"><strong>B.Tech in Computer Science & Engineering</strong></p>
-              <p class="text-muted mb-1">UKF College of Engineering & Technology</p>
-              <p class="text-muted mb-0">Expected 2026 • CGPA: 7.02</p>
-            </div>
-          </div>
-
-          <div class="col-md-6" data-aos="fade-up" data-aos-delay="200">
-            <div class="card-glass">
-              <h5 class="mb-3"><i class="fas fa-trophy me-2" style="color: var(--accent-yellow);"></i>Achievement</h5>
-              <p class="mb-2"><strong>First Prize - Best Project</strong></p>
-              <p class="text-muted mb-1">TinkerHub HerHack Hackathon 3.0</p>
-              <p class="text-muted mb-0">2024</p>
+            <!-- Code Snippet Decoration -->
+            <div class="code-decoration" data-aos="fade-up" data-aos-delay="300">
+              <div class="code-header">
+                <span></span>
+                <span></span>
+                <span></span>
+              </div>
+              <pre class="code-content"><code><span class="code-keyword">const</span> <span class="code-variable">developer</span> = {
+  <span class="code-property">name</span>: <span class="code-string">'Neithal Prince'</span>,
+  <span class="code-property">role</span>: <span class="code-string">'Full-Stack Dev'</span>,
+  <span class="code-property">skills</span>: [<span class="code-string">'React'</span>, <span class="code-string">'Node'</span>, <span class="code-string">'ML'</span>]
+};</code></pre>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Skills Section -->
-    <section id="skills" class="py-5">
-      <div class="container py-5">
-        <div data-aos="fade-up">
-          <h2 class="section-heading">Technical Skills</h2>
-          <p class="text-muted mt-3 mb-5" style="font-size: 1.1rem;">
-            Technologies and tools I use to bring ideas to life
-          </p>
+    <!-- About Section with Timeline -->
+    <section id="about" class="about-section">
+      <div class="container">
+        <div class="section-header" data-aos="fade-up">
+          <span class="section-label">About Me</span>
+          <h2 class="section-title">Building Tomorrow's<br>Solutions Today</h2>
         </div>
 
-        <div class="text-center mb-5" data-aos="fade-up" data-aos-delay="100">
-          <span class="skill-chip">JavaScript</span>
-          <span class="skill-chip">React</span>
-          <span class="skill-chip">Node.js</span>
-          <span class="skill-chip">MongoDB</span>
-          <span class="skill-chip">MySQL</span>
-          <span class="skill-chip">Python</span>
-          <span class="skill-chip">YOLOv8</span>
-          <span class="skill-chip">Java</span>
-          <span class="skill-chip">C++</span>
-          <span class="skill-chip">Git & GitHub</span>
-          <span class="skill-chip">Blender</span>
-          <span class="skill-chip">OpenCV</span>
-        </div>
+        <div class="about-grid">
+          <div class="about-content" data-aos="fade-right">
+            <p class="about-text">
+              I'm a Computer Science Engineering student passionate about creating impactful digital solutions. 
+              My journey spans full-stack development, machine learning, and everything in between.
+            </p>
+            <p class="about-text">
+              With hands-on experience in modern web technologies and a hackathon-winning project under my belt, 
+              I thrive on turning complex challenges into elegant, user-friendly applications.
+            </p>
 
-        <div class="row gy-4 mt-4">
-          <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
-            <div class="card-glass text-center">
-              <div class="mb-3">
-                <i class="fas fa-code fa-3x" style="color: var(--accent-primary);"></i>
+            <div class="achievement-card">
+              <div class="achievement-icon">
+                <i class="fas fa-trophy"></i>
               </div>
-              <h5>Frontend Development</h5>
-              <p class="text-muted mb-0">React, JavaScript, HTML5, CSS3, Bootstrap</p>
+              <div class="achievement-content">
+                <h4>1st Prize Winner</h4>
+                <p>TinkerHub HerHack Hackathon 3.0</p>
+                <span class="achievement-year">2024</span>
+              </div>
             </div>
           </div>
 
-          <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
-            <div class="card-glass text-center">
-              <div class="mb-3">
-                <i class="fas fa-server fa-3x" style="color: var(--accent-secondary);"></i>
-              </div>
-              <h5>Backend Development</h5>
-              <p class="text-muted mb-0">Node.js, Express, MongoDB, MySQL</p>
+          <div class="education-card" data-aos="fade-left">
+            <div class="card-glow"></div>
+            <div class="education-icon">
+              <i class="fas fa-graduation-cap"></i>
             </div>
-          </div>
-
-          <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
-            <div class="card-glass text-center">
-              <div class="mb-3">
-                <i class="fas fa-brain fa-3x" style="color: var(--accent-tertiary);"></i>
-              </div>
-              <h5>Machine Learning</h5>
-              <p class="text-muted mb-0">YOLOv8, Python, OpenCV, Real-time Detection</p>
+            <h3>Education</h3>
+            <h4>B.Tech in Computer Science & Engineering</h4>
+            <p class="institution">UKF College of Engineering & Technology</p>
+            <div class="education-details">
+              <span class="detail-item">
+                <i class="fas fa-calendar"></i>
+                Expected 2026
+              </span>
+              <span class="detail-item">
+                <i class="fas fa-chart-line"></i>
+                CGPA: 7.02
+              </span>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Projects Section -->
-    <section id="projects" class="py-5">
-      <div class="container py-5">
-        <div data-aos="fade-up">
-          <h2 class="section-heading">Featured Projects</h2>
-          <p class="text-muted mt-3 mb-5" style="font-size: 1.1rem;">
-            A showcase of my recent work and experiments
-          </p>
+    <!-- Skills Section with Interactive Cards -->
+    <section id="skills" class="skills-section">
+      <div class="container">
+        <div class="section-header" data-aos="fade-up">
+          <span class="section-label">Technical Arsenal</span>
+          <h2 class="section-title">Tools & Technologies</h2>
         </div>
 
-        <div class="row gy-4">
-          <div class="col-lg-6" data-aos="zoom-in" data-aos-delay="100">
-            <div class="project-card">
-              <div class="project-icon">
-                <i class="fas fa-users"></i>
-              </div>
-              <h4 class="mb-3">Point-Supervised YOLOv8 for Crowd Detection</h4>
-              <p class="text-muted mb-3">
-                Advanced real-time crowd detection and density analysis system using point supervision methodology
-                with YOLOv8 for accurate people counting and crowd management applications.
-              </p>
-              <div class="mb-3">
-                <span class="badge bg-secondary me-2">YOLOv8</span>
-                <span class="badge bg-secondary me-2">Python</span>
-                <span class="badge bg-secondary me-2">OpenCV</span>
-                <span class="badge bg-secondary">Real-time</span>
-              </div>
-              <span class="text-warning"><i class="fas fa-star me-1"></i>Ongoing Project</span>
+        <div class="skills-categories">
+          <div class="skill-category" data-aos="fade-up" data-aos-delay="100">
+            <div class="category-icon">
+              <i class="fas fa-laptop-code"></i>
+            </div>
+            <h3>Frontend</h3>
+            <div class="tech-tags">
+              <span class="tech-tag">React</span>
+              <span class="tech-tag">JavaScript</span>
+              <span class="tech-tag">HTML5</span>
+              <span class="tech-tag">CSS3</span>
+              <span class="tech-tag">Bootstrap</span>
             </div>
           </div>
 
-          <div class="col-lg-6" data-aos="zoom-in" data-aos-delay="200">
-            <div class="project-card">
-              <div class="project-icon">
-                <i class="fas fa-heartbeat"></i>
-              </div>
-              <h4 class="mb-3">Smart Blood Donation & History Tracker</h4>
-              <p class="text-muted mb-3">
-                Full-stack MERN application for efficient blood donation management featuring donor registration,
-                recipient matching, authentication system, and comprehensive donation history tracking.
-              </p>
-              <div class="mb-3">
-                <span class="badge bg-secondary me-2">MongoDB</span>
-                <span class="badge bg-secondary me-2">Express</span>
-                <span class="badge bg-secondary me-2">React</span>
-                <span class="badge bg-secondary">Node.js</span>
-              </div>
-              <a href="https://blood-donation-three-pearl.vercel.app/" class="text-decoration-none">
-                <i class="fas fa-external-link-alt me-2" style="color: var(--accent-primary);"></i>
-                <span style="color: var(--accent-primary);">View Project</span>
-              </a>
+          <div class="skill-category" data-aos="fade-up" data-aos-delay="200">
+            <div class="category-icon">
+              <i class="fas fa-server"></i>
+            </div>
+            <h3>Backend</h3>
+            <div class="tech-tags">
+              <span class="tech-tag">Node.js</span>
+              <span class="tech-tag">Express</span>
+              <span class="tech-tag">MongoDB</span>
+              <span class="tech-tag">MySQL</span>
+            </div>
+          </div>
+
+          <div class="skill-category" data-aos="fade-up" data-aos-delay="300">
+            <div class="category-icon">
+              <i class="fas fa-brain"></i>
+            </div>
+            <h3>Machine Learning</h3>
+            <div class="tech-tags">
+              <span class="tech-tag">Python</span>
+              <span class="tech-tag">YOLOv8</span>
+              <span class="tech-tag">OpenCV</span>
+              <span class="tech-tag">TensorFlow</span>
+            </div>
+          </div>
+
+          <div class="skill-category" data-aos="fade-up" data-aos-delay="400">
+            <div class="category-icon">
+              <i class="fas fa-tools"></i>
+            </div>
+            <h3>Tools & Other</h3>
+            <div class="tech-tags">
+              <span class="tech-tag">Git</span>
+              <span class="tech-tag">GitHub</span>
+              <span class="tech-tag">Blender</span>
+              <span class="tech-tag">Java</span>
+              <span class="tech-tag">C++</span>
             </div>
           </div>
         </div>
       </div>
+    </section>
+
+    <!-- Projects Section with Bento Layout -->
+    <section id="projects" class="projects-section">
+      <div class="container">
+        <div class="section-header" data-aos="fade-up">
+          <span class="section-label">Featured Work</span>
+          <h2 class="section-title">Recent Projects</h2>
+        </div>
+
+        <div class="projects-bento">
+          <!-- Project 1 - Large -->
+          <div class="project-card project-large" data-aos="fade-up">
+            <div class="project-image">
+              <img src="assests/project1.jpg" alt="Point-Supervised YOLOv8">
+              <div class="project-overlay"></div>
+            </div>
+            <div class="project-content">
+              <span class="project-tag">Machine Learning</span>
+              <h3>Point-Supervised YOLOv8</h3>
+              <p>Real-time crowd detection system using advanced point supervision methodology for accurate density analysis and people counting in complex environments.</p>
+              <div class="project-tech">
+                <span>Python</span>
+                <span>YOLOv8</span>
+                <span>OpenCV</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 2 - Large -->
+          <div class="project-card project-large" data-aos="fade-up" data-aos-delay="100">
+            <div class="project-image">
+              <img src="assests/project2.jpg" alt="Blood Donation Tracker">
+              <div class="project-overlay"></div>
+            </div>
+            <div class="project-content">
+              <span class="project-tag">Full-Stack</span>
+              <h3>Smart Blood Donation Tracker</h3>
+              <p>Comprehensive MERN stack application streamlining blood donation management with real-time donor-recipient matching and secure authentication.</p>
+              <div class="project-tech">
+                <span>React</span>
+                <span>Node.js</span>
+                <span>MongoDB</span>
+                <span>Express</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Project 3 - DiagnosAI -->
+<div class="project-card project-large" data-aos="fade-up" data-aos-delay="200">
+  <div class="project-image">
+    <img src="assests/diagnosai.jpg" alt="DiagnosAI">
+    <div class="project-overlay"></div>
+  </div>
+  <div class="project-content">
+    <span class="project-tag">AI / Healthcare</span>
+    <h3>DiagnosAI – Smart Health Diagnosis</h3>
+    <p>
+      AI-powered web application that predicts possible diseases based on user-described symptoms with confidence score and risk alerts.
+    </p>
+    <div class="project-tech">
+      <span>Python</span>
+      <span>Streamlit</span>
+      <span>Scikit-learn</span>
+      <span>Machine Learning</span>
+    </div>
+  </div>
+</div>
+
     </section>
 
     <!-- Experience Section -->
-    <section id="experience" class="py-5">
-      <div class="container py-5">
-        <div data-aos="fade-up">
-          <h2 class="section-heading">Experience</h2>
-          <p class="text-muted mt-3 mb-5" style="font-size: 1.1rem;">
-            My professional journey and achievements
-          </p>
+    <section id="experience" class="experience-section">
+      <div class="container">
+        <div class="section-header" data-aos="fade-up">
+          <span class="section-label">Professional Journey</span>
+          <h2 class="section-title">Work Experience</h2>
         </div>
 
-        <div class="row">
-          <div class="col-lg-8 mx-auto">
-            <div class="timeline-item" data-aos="fade-up" data-aos-delay="100">
-              <div class="card-glass">
-                <h5 class="mb-2">Software Development Engineering Intern</h5>
-                <p class="mb-2" style="color: var(--accent-primary);">
-                  <i class="fas fa-building me-2"></i>Algon Solutions Pvt. Ltd.
-                </p>
-                <p class="text-muted mb-3">
-                  <i class="fas fa-calendar-alt me-2"></i>June 2025 – July 2025 • Kochi, Kerala
-                </p>
-                <ul class="text-muted mb-0">
-                  <li>Developed and optimized web-based applications using modern frameworks</li>
-                  <li>Collaborated with cross-functional teams in agile development environment</li>
-                  <li>Enhanced system performance through debugging and code optimization</li>
-                  <li>Gained hands-on experience in scalable software architecture design</li>
-                </ul>
+        <div class="experience-timeline">
+          <div class="timeline-item" data-aos="fade-up">
+            <div class="timeline-dot"></div>
+            <div class="timeline-card">
+              <div class="timeline-header">
+                <div>
+                  <h3>Software Development Engineering Intern</h3>
+                  <p class="company">Algon Solutions Pvt. Ltd.</p>
+                </div>
+                <span class="timeline-date">Jun 2025 - Jul 2025</span>
               </div>
+              <p class="timeline-location">
+                <i class="fas fa-map-marker-alt"></i>
+                Kochi, Kerala
+              </p>
+              <ul class="timeline-highlights">
+                <li>Developed and optimized web applications using modern JavaScript frameworks</li>
+                <li>Collaborated with cross-functional teams in agile development sprints</li>
+                <li>Enhanced system performance through code optimization and debugging</li>
+                <li>Gained expertise in scalable architecture design patterns</li>
+              </ul>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Contact Section -->
-    <section id="contact" class="py-5">
-      <div class="container py-5">
-        <div class="row gy-4 align-items-center">
-          <div class="col-lg-6" data-aos="fade-right">
-            <h2 class="section-heading">Contact</h2>
-            <p class="text-muted mt-3" style="font-size:1.05rem;">
-              Interested in working together or have a question? Drop me a message — I'll get back to you soon.
+    <!-- Contact Section with Form -->
+    <section id="contact" class="contact-section">
+      <div class="container">
+        <div class="contact-grid">
+          <div class="contact-info" data-aos="fade-right">
+            <span class="section-label">Get In Touch</span>
+            <h2 class="section-title">Let's Build<br>Something Great</h2>
+            <p class="contact-description">
+              Have a project in mind or just want to chat? I'm always open to discussing new opportunities 
+              and creative collaborations.
             </p>
 
-            <div class="mt-4">
-              <p class="mb-1"><i class="fas fa-envelope me-2"></i> neithalprince@gmail.com</p>
-              <p class="mb-0"><i class="fas fa-phone me-2"></i> +91 8289977343</p>
-            </div>
-          </div>
-
-
-          <!-- Footer -->
-          <footer>
-            <div class="container">
-              <div class="row align-items-center">
-                <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
-                  <p class="mb-0">© <span id="year"></span> Neithal Prince — Built with ❤ • Designed with Bootstrap &
-                    AOS</p>
+            <div class="contact-details">
+              <a href="mailto:neithalprince@gmail.com" class="contact-item">
+                <div class="contact-icon">
+                  <i class="fas fa-envelope"></i>
                 </div>
-                <div class="col-md-6 text-center text-md-end">
-                  <a href="https://github.com/Neithuz-dev" target="_blank" class="me-3 social-links"><i
-                      class="fab fa-github"></i></a>
-                  <a href="https://linkedin.com/in/neithal-prince-74478a261" target="_blank"
-                    class="me-3 social-links"><i class="fab fa-linkedin"></i></a>
-                  <a href="mailto:neithalprince@gmail.com" class="social-links"><i class="fas fa-envelope"></i></a>
+                <div>
+                  <span class="contact-label">Email</span>
+                  <span class="contact-value">neithalprince@gmail.com</span>
+                </div>
+              </a>
+
+              <a href="tel:+918289977343" class="contact-item">
+                <div class="contact-icon">
+                  <i class="fas fa-phone"></i>
+                </div>
+                <div>
+                  <span class="contact-label">Phone</span>
+                  <span class="contact-value">+91 8289977343</span>
+                </div>
+              </a>
+
+              <div class="contact-item">
+                <div class="contact-icon">
+                  <i class="fas fa-map-marker-alt"></i>
+                </div>
+                <div>
+                  <span class="contact-label">Location</span>
+                  <span class="contact-value">Kollam, Kerala, India</span>
                 </div>
               </div>
             </div>
-          </footer>
+
+            <div class="social-links-footer">
+              <a href="https://github.com/Neithuz-dev" target="_blank" class="social-link">
+                <i class="fab fa-github"></i>
+              </a>
+              <a href="https://linkedin.com/in/neithal-prince-74478a261" target="_blank" class="social-link">
+                <i class="fab fa-linkedin"></i>
+              </a>
+              <a href="mailto:neithalprince@gmail.com" class="social-link">
+                <i class="fas fa-envelope"></i>
+              </a>
+            </div>
+          </div>
+
+          <div class="contact-visual" data-aos="fade-left">
+            <div class="cta-card">
+              <div class="cta-glow"></div>
+              <h3>Ready to collaborate?</h3>
+              <p>Download my resume or reach out directly</p>
+              <a href="assests/RESUME.pdf" class="btn-download" download>
+                <i class="fas fa-download"></i>
+                <span>Download Resume</span>
+              </a>
+            </div>
+          </div>
         </div>
+      </div>
+    </section>
 
-        <!-- Scripts -->
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
-        <script>
-          // Init AOS
-          AOS.init({ duration: 800, once: true });
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-content">
+          <div class="footer-brand">
+            <div class="logo-text">
+              <span class="logo-bracket">&lt;</span>
+              <span class="logo-name">NP</span>
+              <span class="logo-bracket">/&gt;</span>
+            </div>
+            <p>Crafting digital experiences with code & creativity</p>
+          </div>
+          <div class="footer-copyright">
+            <p>© 2025 Neithal Prince. All rights reserved.</p>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </div>
 
-          // Year
-          document.getElementById('year').textContent = new Date().getFullYear();
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+  <script>
+    // Initialize AOS
+    AOS.init({ 
+      duration: 1000, 
+      once: true,
+      offset: 100
+    });
 
-          // Smooth scrolling for nav links
-          document.querySelectorAll('.nav-link').forEach(el => {
-            el.addEventListener('click', function (e) {
-              if (this.hash && document.querySelector(this.hash)) {
-                e.preventDefault();
-                const target = document.querySelector(this.hash);
-                window.scrollTo({ top: target.offsetTop - 80, behavior: 'smooth' });
-                // collapse navbar on mobile
-                const bsCollapse = new bootstrap.Collapse(document.querySelector('.navbar-collapse'), { toggle: false });
-                bsCollapse.hide();
-              }
-            });
-          });
+    // Mobile Menu Toggle
+    const mobileToggle = document.getElementById('mobileToggle');
+    const navMenu = document.getElementById('navMenu');
 
-          // Simple contact form handler (no backend) — replace with real endpoint if needed
-          document.getElementById('contactForm').addEventListener('submit', function (e) {
-            e.preventDefault();
-            // You can replace this with an AJAX call to your email endpoint / server
-            alert('Thanks — your message has been recorded locally. Replace with a backend endpoint to submit.');
-            this.reset();
-          });
-        </script>
+    mobileToggle.addEventListener('click', () => {
+      mobileToggle.classList.toggle('active');
+      navMenu.classList.toggle('active');
+    });
+
+    // Smooth Scroll
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          navMenu.classList.remove('active');
+          mobileToggle.classList.remove('active');
+        }
+      });
+    });
+
+    // Navbar Scroll Effect
+    let lastScroll = 0;
+    const navbar = document.querySelector('.navbar-custom');
+
+    window.addEventListener('scroll', () => {
+      const currentScroll = window.pageYOffset;
+      
+      if (currentScroll > 100) {
+        navbar.classList.add('scrolled');
+      } else {
+        navbar.classList.remove('scrolled');
+      }
+
+      lastScroll = currentScroll;
+    });
+
+    // Parallax Effect
+    window.addEventListener('scroll', () => {
+      const scrolled = window.pageYOffset;
+      const parallaxElements = document.querySelectorAll('.hero-visual');
+      
+      parallaxElements.forEach(el => {
+        const speed = 0.5;
+        el.style.transform = `translateY(${scrolled * speed}px)`;
+      });
+    });
+  </script>
 </body>
 
 </html>
