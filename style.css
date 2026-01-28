@@ -171,14 +171,17 @@ body {
   width: 100%;
   padding: 1.5rem 0;
   z-index: 1000;
-  transition: all 0.3s ease;
+  transition: all 0.3s cubic-bezier(0.4,0,0.2,1);
+  background:transparent;
 }
 
 .navbar-custom.scrolled {
   background: rgba(10, 10, 15, 0.95);
   backdrop-filter: blur(20px);
-  border-bottom: 1px solid var(--border-color);
+  border-bottom: 1px solid rgba(0, 255, 255, 0.15);
   padding: 1rem 0;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3),
+              0 0 20px rgba(0, 255, 255, 0.05);
 }
 
 .nav-content {
@@ -195,6 +198,8 @@ body {
   display: flex;
   align-items: center;
   gap: 0.2rem;
+  transition: all 0.3s ease;
+  position: relative;
 }
 
 .logo-bracket {
@@ -491,6 +496,8 @@ body {
     transform: rotate(360deg);
   }
 }
+
+/* ==================== Profile Section (NO BOX - LEFT ALIGNED) ==================== */
 /* ==================== Profile Section (NO BOX - LEFT ALIGNED) ==================== */
 .hero-visual {
   position: relative;
@@ -564,36 +571,42 @@ body {
   z-index: 2;
   background: transparent;
   
-  /* Sophisticated edge blur with vignette effect */
+  /* Smooth gradient fade to transparent - much softer blend */
   mask-image: radial-gradient(
-    ellipse 85% 85% at 45% 50%, 
-    black 50%, 
-    rgba(0, 0, 0, 0.8) 70%,
+    ellipse 100% 100% at 40% 50%, 
+    black 30%, 
+    rgba(0, 0, 0, 0.9) 45%,
+    rgba(0, 0, 0, 0.7) 60%,
+    rgba(0, 0, 0, 0.4) 75%,
+    rgba(0, 0, 0, 0.15) 85%,
     transparent 100%
   );
   -webkit-mask-image: radial-gradient(
-    ellipse 85% 85% at 45% 50%, 
-    black 50%, 
-    rgba(0, 0, 0, 0.8) 70%,
+    ellipse 100% 100% at 40% 50%, 
+    black 30%, 
+    rgba(0, 0, 0, 0.9) 45%,
+    rgba(0, 0, 0, 0.7) 60%,
+    rgba(0, 0, 0, 0.4) 75%,
+    rgba(0, 0, 0, 0.15) 85%,
     transparent 100%
   );
   
-  /* Subtle glow and depth */
-  filter: drop-shadow(0 10px 30px rgba(0, 255, 255, 0.15)) 
-          drop-shadow(0 20px 60px rgba(255, 0, 255, 0.1))
-          contrast(1.05)
-          saturate(1.1);
+  /* Very subtle glow - no harsh shadows */
+  filter: drop-shadow(0 8px 24px rgba(0, 255, 255, 0.08)) 
+          drop-shadow(0 16px 48px rgba(255, 0, 255, 0.06))
+          contrast(1.03)
+          saturate(1.05);
   
   transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .profile-image:hover {
-  filter: drop-shadow(0 15px 40px rgba(0, 255, 255, 0.25)) 
-          drop-shadow(0 25px 70px rgba(255, 0, 255, 0.2))
-          contrast(1.08)
-          saturate(1.15)
-          brightness(1.05);
-  transform: scale(1.03) translateX(10px);
+  filter: drop-shadow(0 12px 32px rgba(0, 255, 255, 0.12)) 
+          drop-shadow(0 20px 56px rgba(255, 0, 255, 0.09))
+          contrast(1.05)
+          saturate(1.08)
+          brightness(1.03);
+  transform: scale(1.02) translateX(8px);
 }
 
 .profile-border {
@@ -635,9 +648,9 @@ body {
   
   animation: gradient-shift 8s ease infinite;
   
-  /* Text shadow for depth */
-  text-shadow: 0 0 40px rgba(0, 255, 255, 0.3),
-               0 0 80px rgba(255, 0, 255, 0.2);
+  /* Subtle text glow */
+  filter: drop-shadow(0 0 30px rgba(0, 255, 255, 0.2))
+          drop-shadow(0 0 60px rgba(255, 0, 255, 0.15));
 }
 
 @keyframes gradient-shift {
@@ -706,6 +719,25 @@ body {
   
   .profile-info p::after {
     width: 80px;
+  }
+  
+  .profile-image {
+    mask-image: radial-gradient(
+      ellipse 95% 95% at 50% 50%, 
+      black 35%, 
+      rgba(0, 0, 0, 0.8) 50%,
+      rgba(0, 0, 0, 0.5) 65%,
+      rgba(0, 0, 0, 0.2) 80%,
+      transparent 100%
+    );
+    -webkit-mask-image: radial-gradient(
+      ellipse 95% 95% at 50% 50%, 
+      black 35%, 
+      rgba(0, 0, 0, 0.8) 50%,
+      rgba(0, 0, 0, 0.5) 65%,
+      rgba(0, 0, 0, 0.2) 80%,
+      transparent 100%
+    );
   }
 }
 
