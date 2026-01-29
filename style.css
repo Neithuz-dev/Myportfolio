@@ -460,45 +460,7 @@ body {
   background: var(--border-color);
 }
 
-/* ==================== Profile Section (NO BOX - LEFT ALIGNED) ==================== */
-.hero-visual {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-}
-
-.profile-card {
-  background: transparent;
-  border: none;
-  padding: 0;
-  position: relative;
-  overflow: visible;
-}
-
-.profile-glow {
-  position: absolute;
-  top: -50%;
-  left: -50%;
-  width: 200%;
-  height: 200%;
-  background: radial-gradient(circle, var(--glow-cyan), transparent 70%);
-  opacity: 0.15;
-  animation: rotate 10s linear infinite;
-  pointer-events: none;
-}
-
-@keyframes rotate {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
-}
-
-/* ==================== Profile Section (NO BOX - LEFT ALIGNED) ==================== */
-/* ==================== Profile Section (NO BOX - LEFT ALIGNED) ==================== */
+/* ==================== Profile Section (Name Overlapping Image) ==================== */
 .hero-visual {
   position: relative;
   display: flex;
@@ -524,12 +486,13 @@ body {
   width: 100%;
   max-width: 700px;
   height: auto;
-  margin-bottom: 3rem;
+  margin-bottom: 0; /* Remove margin - name will overlap */
   background: transparent;
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  margin-left: -20px; /* Extend slightly beyond container */
+  margin-left: -20px;
+  z-index: 1;
 }
 
 /* Animated gradient background behind image */
@@ -541,13 +504,6 @@ body {
   transform: translate(-50%, -50%);
   width: 120%;
   height: 120%;
-  background: radial-gradient(
-    circle at center,
-    rgba(0, 255, 255, 0.1) 0%,
-    rgba(255, 0, 255, 0.08) 40%,
-    transparent 70%
-  );
-  animation: pulse-glow 4s ease-in-out infinite;
   z-index: 0;
   pointer-events: none;
 }
@@ -570,8 +526,11 @@ body {
   position: relative;
   z-index: 2;
   background: transparent;
+  display: block;
+  margin: 0;
+  padding: 0;
   
-  /* Smooth gradient fade to transparent - much softer blend */
+  /* Smooth gradient fade to transparent */
   mask-image: radial-gradient(
     ellipse 100% 100% at 40% 50%, 
     black 30%, 
@@ -591,7 +550,7 @@ body {
     transparent 100%
   );
   
-  /* Very subtle glow - no harsh shadows */
+  /* Very subtle glow */
   filter: drop-shadow(0 8px 24px rgba(0, 255, 255, 0.08)) 
           drop-shadow(0 16px 48px rgba(255, 0, 255, 0.06))
           contrast(1.03)
@@ -613,25 +572,21 @@ body {
   display: none;
 }
 
-.profile-info {
-  text-align: left;
+/* ==================== Name Overlapping Under Image ==================== */
+.profile-name-overlay {
   position: relative;
-  z-index: 3;
-  margin-left: 0;
-  padding-left: 5px;
+  margin-top: -80px; /* Overlap the image */
+  margin-left: 5px;
+  z-index: 10;
+  padding-bottom: 1.5rem;
 }
 
-.profile-info h3 {
-  display: none;
-}
-
-.profile-info p {
-  font-size: 3.5rem;
+.profile-name-overlay h1 {
+  font-size: 4.5rem;
   font-weight: 900;
-  margin-bottom: 0;
-  line-height: 1.2;
-  letter-spacing: -1.5px;
-  position: relative;
+  margin: 0;
+  line-height: 1;
+  letter-spacing: -2px;
   
   /* Animated gradient text */
   background: linear-gradient(
@@ -646,11 +601,12 @@ body {
   -webkit-text-fill-color: transparent;
   background-clip: text;
   
-  animation: gradient-shift 8s ease infinite;
+  animation: none;
   
-  /* Subtle text glow */
-  filter: drop-shadow(0 0 30px rgba(0, 255, 255, 0.2))
-          drop-shadow(0 0 60px rgba(255, 0, 255, 0.15));
+  /* Strong text glow for visibility */
+  filter: drop-shadow(0 0 40px rgba(0, 255, 255, 0.3))
+          drop-shadow(0 0 80px rgba(255, 0, 255, 0.2))
+          drop-shadow(0 4px 20px rgba(0, 0, 0, 0.8));
 }
 
 @keyframes gradient-shift {
@@ -662,28 +618,118 @@ body {
   }
 }
 
-/* Subtle underline accent */
-.profile-info p::after {
-  content: '';
-  position: absolute;
-  bottom: -10px;
-  left: 0;
-  width: 120px;
-  height: 4px;
-  background: linear-gradient(90deg, var(--accent-cyan), transparent);
-  border-radius: 2px;
-  animation: line-glow 3s ease-in-out infinite;
-}
-
 @keyframes line-glow {
   0%, 100% {
-    opacity: 0.5;
-    width: 120px;
+    opacity: 0.6;
+    width: 150px;
   }
   50% {
     opacity: 1;
-    width: 180px;
+    width: 220px;
   }
+}
+
+/* ==================== Profile Info (Role and Buttons) ==================== */
+.profile-info {
+  text-align: left;
+  position: relative;
+  z-index: 3;
+  margin-left: 5px;
+  padding-left: 0;
+}
+
+.profile-info h3 {
+  display: none;
+}
+
+.profile-info p {
+  display: none;
+}
+
+.role-text {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin: 0 0 2rem 0;
+  color: var(--text-secondary);
+  letter-spacing: 0.5px;
+  opacity: 0.9;
+}
+
+/* ==================== Social Buttons ==================== */
+.social-buttons {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-top: 1.5rem;
+}
+
+.social-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.9rem 1.8rem;
+  background: var(--bg-secondary);
+  border: 2px solid var(--border-color);
+  border-radius: 12px;
+  color: var(--text-primary);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1rem;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.social-btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(0, 255, 255, 0.1), transparent);
+  transition: left 0.5s;
+}
+
+.social-btn:hover::before {
+  left: 100%;
+}
+
+.social-btn:hover {
+  border-color: var(--accent-cyan);
+  background: rgba(0, 255, 255, 0.05);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0, 255, 255, 0.2);
+}
+
+.social-btn i {
+  font-size: 1.2rem;
+  transition: transform 0.3s;
+}
+
+.social-btn:hover i {
+  transform: scale(1.1) rotate(5deg);
+}
+
+.social-btn span {
+  font-size: 0.95rem;
+  letter-spacing: 0.3px;
+}
+
+/* Individual button colors */
+.social-btn:nth-child(1):hover {
+  border-color: #6e5494;
+  box-shadow: 0 8px 24px rgba(110, 84, 148, 0.3);
+}
+
+.social-btn:nth-child(2):hover {
+  border-color: #0077b5;
+  box-shadow: 0 8px 24px rgba(0, 119, 181, 0.3);
+}
+
+.social-btn:nth-child(3):hover {
+  border-color: var(--accent-magenta);
+  box-shadow: 0 8px 24px rgba(255, 0, 255, 0.3);
 }
 
 .social-icons {
@@ -694,126 +740,17 @@ body {
   display: none;
 }
 
-/* Responsive adjustments */
-@media (max-width: 1024px) {
-  .profile-image-wrapper {
-    max-width: 600px;
-    margin-left: -10px;
-  }
-  
-  .profile-info p {
-    font-size: 3rem;
-  }
-}
-
-@media (max-width: 768px) {
-  .profile-image-wrapper {
-    max-width: 500px;
-    margin-left: 0;
-  }
-  
-  .profile-info p {
-    font-size: 2.2rem;
-    letter-spacing: -1px;
-  }
-  
-  .profile-info p::after {
-    width: 80px;
-  }
-  
-  .profile-image {
-    mask-image: radial-gradient(
-      ellipse 95% 95% at 50% 50%, 
-      black 35%, 
-      rgba(0, 0, 0, 0.8) 50%,
-      rgba(0, 0, 0, 0.5) 65%,
-      rgba(0, 0, 0, 0.2) 80%,
-      transparent 100%
-    );
-    -webkit-mask-image: radial-gradient(
-      ellipse 95% 95% at 50% 50%, 
-      black 35%, 
-      rgba(0, 0, 0, 0.8) 50%,
-      rgba(0, 0, 0, 0.5) 65%,
-      rgba(0, 0, 0, 0.2) 80%,
-      transparent 100%
-    );
-  }
-}
-
-@media (max-width: 480px) {
-  .profile-image-wrapper {
-    max-width: 100%;
-    margin-left: 0;
-  }
-  
-  .profile-info p {
-    font-size: 1.8rem;
-    letter-spacing: -0.5px;
-  }
-  
-  .profile-info p::after {
-    width: 60px;
-    height: 3px;
-  }
-}
-/* ==================== Code Decoration ==================== */
+/* ==================== Code Decoration - HIDDEN ==================== */
 .code-decoration {
-  background: var(--bg-secondary);
-  border: 1px solid var(--border-color);
-  border-radius: 15px;
-  padding: 1rem;
-  margin-top: 2rem;
-  font-family: 'JetBrains Mono', monospace;
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+  display: none;
 }
 
 .code-header {
-  display: flex;
-  gap: 0.5rem;
-  margin-bottom: 1rem;
-}
-
-.code-header span {
-  width: 12px;
-  height: 12px;
-  border-radius: 50%;
-  background: var(--text-muted);
-}
-
-.code-header span:nth-child(1) {
-  background: #ff5f56;
-}
-
-.code-header span:nth-child(2) {
-  background: #ffbd2e;
-}
-
-.code-header span:nth-child(3) {
-  background: #27c93f;
+  display: none;
 }
 
 .code-content {
-  font-size: 0.85rem;
-  line-height: 1.6;
-  color: var(--text-secondary);
-  margin: 0;
-}
-
-.code-keyword {
-  color: var(--accent-magenta);
-}
-
-.code-variable {
-  color: var(--accent-cyan);
-}
-
-.code-property {
-  color: var(--accent-yellow);
-}
-
-.code-string {
-  color: #90ee90;
+  display: none;
 }
 
 /* ==================== Section Styles ==================== */
@@ -1268,76 +1205,6 @@ body {
   color: var(--bg-primary);
 }
 
-/* Responsive Design */
-@media (max-width: 968px) {
-  .project-card,
-  .project-card:nth-child(even) {
-    grid-template-columns: 1fr;
-    direction: ltr;
-    gap: 2rem;
-    padding: 2rem;
-  }
-
-  .project-image {
-    height: 300px;
-  }
-
-  .project-content h3 {
-    font-size: 1.5rem;
-  }
-}
-
-@media (max-width: 768px) {
-  .projects-section {
-    padding: 4rem 0;
-  }
-
-  .projects-grid {
-    gap: 3rem;
-  }
-
-  .project-card {
-    padding: 1.5rem;
-  }
-
-  .project-image {
-    height: 250px;
-  }
-
-  .project-content h3 {
-    font-size: 1.3rem;
-  }
-
-  .project-content p {
-    font-size: 0.95rem;
-  }
-
-  .project-links {
-    flex-direction: column;
-  }
-
-  .project-link {
-    width: 100%;
-    justify-content: center;
-  }
-}
-
-@media (max-width: 480px) {
-  .project-image {
-    height: 200px;
-  }
-
-  .project-tech span {
-    font-size: 0.75rem;
-    padding: 0.4rem 0.8rem;
-  }
-
-  .project-content h3 {
-    font-size: 1.2rem;
-  }
-}
-
-
 /* ==================== Experience Section ==================== */
 .experience-section {
   padding: 6rem 0;
@@ -1574,6 +1441,15 @@ body {
   animation: rotate 10s linear infinite;
 }
 
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
 .cta-card h3 {
   font-size: 2rem;
   margin-bottom: 1rem;
@@ -1634,6 +1510,44 @@ body {
 /* =========================
    MOBILE RESPONSIVE STYLES
    ========================= */
+@media (max-width: 1024px) {
+  .profile-image-wrapper {
+    max-width: 600px;
+    margin-left: -10px;
+  }
+  
+  .profile-name-overlay {
+    margin-top: -60px;
+  }
+  
+  .profile-name-overlay h1 {
+    font-size: 3.5rem;
+    letter-spacing: -1.5px;
+  }
+  
+  .role-text {
+    font-size: 1.3rem;
+  }
+}
+
+@media (max-width: 968px) {
+  .project-card,
+  .project-card:nth-child(even) {
+    grid-template-columns: 1fr;
+    direction: ltr;
+    gap: 2rem;
+    padding: 2rem;
+  }
+
+  .project-image {
+    height: 300px;
+  }
+
+  .project-content h3 {
+    font-size: 1.5rem;
+  }
+}
+
 @media (max-width: 768px) {
 
   /* Navbar */
@@ -1697,21 +1611,43 @@ body {
   }
 
   .profile-image-wrapper {
-    width: 280px;
-    height: 280px;
+    max-width: 500px;
+    margin-left: 0;
+  }
+  
+  .profile-name-overlay {
+    margin-top: -50px;
+    margin-left: 0;
+  }
+  
+  .profile-name-overlay h1 {
+    font-size: 2.8rem;
+    letter-spacing: -1px;
+  }
+  
+  .profile-name-overlay h1::after {
+    width: 100px;
+  }
+  
+  .role-text {
+    font-size: 1.1rem;
+  }
+  
+  .social-buttons {
+    gap: 0.8rem;
+  }
+  
+  .social-btn {
+    padding: 0.8rem 1.4rem;
+    font-size: 0.9rem;
+  }
+  
+  .social-btn i {
+    font-size: 1.1rem;
   }
 
   .profile-info {
     text-align: center;
-  }
-
-  .social-icons {
-    justify-content: center;
-  }
-
-  /* Code decoration */
-  .code-decoration {
-    max-width: 100%;
   }
 
   /* About section */
@@ -1730,8 +1666,37 @@ body {
   }
 
   /* Projects */
+  .projects-section {
+    padding: 4rem 0;
+  }
+
   .projects-grid {
-    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+
+  .project-card {
+    padding: 1.5rem;
+  }
+
+  .project-image {
+    height: 250px;
+  }
+
+  .project-content h3 {
+    font-size: 1.3rem;
+  }
+
+  .project-content p {
+    font-size: 0.95rem;
+  }
+
+  .project-links {
+    flex-direction: column;
+  }
+
+  .project-link {
+    width: 100%;
+    justify-content: center;
   }
 
   /* Experience */
@@ -1773,6 +1738,25 @@ body {
     text-align: center;
     gap: 1.5rem;
   }
+  
+  .profile-image {
+    mask-image: radial-gradient(
+      ellipse 95% 95% at 50% 50%, 
+      black 35%, 
+      rgba(0, 0, 0, 0.8) 50%,
+      rgba(0, 0, 0, 0.5) 65%,
+      rgba(0, 0, 0, 0.2) 80%,
+      transparent 100%
+    );
+    -webkit-mask-image: radial-gradient(
+      ellipse 95% 95% at 50% 50%, 
+      black 35%, 
+      rgba(0, 0, 0, 0.8) 50%,
+      rgba(0, 0, 0, 0.5) 65%,
+      rgba(0, 0, 0, 0.2) 80%,
+      transparent 100%
+    );
+  }
 }
 
 @media (max-width: 480px) {
@@ -1781,12 +1765,56 @@ body {
   }
 
   .profile-image-wrapper {
-    width: 400px;
-    height: 440px;
+    max-width: 100%;
+    margin-left: 0;
+  }
+  
+  .profile-name-overlay {
+    margin-top: -40px;
+  }
+  
+  .profile-name-overlay h1 {
+    font-size: 2rem;
+    letter-spacing: -0.5px;
+  }
+  
+  .profile-name-overlay h1::after {
+    width: 80px;
+    height: 3px;
+    bottom: -10px;
+  }
+  
+  .role-text {
+    font-size: 1rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .social-buttons {
+    flex-direction: column;
+    gap: 0.6rem;
+  }
+  
+  .social-btn {
+    width: 100%;
+    justify-content: center;
+    padding: 1rem;
   }
 
   .btn-primary, .btn-secondary {
     padding: 0.8rem 1.5rem;
     font-size: 0.9rem;
+  }
+  
+  .project-image {
+    height: 200px;
+  }
+
+  .project-tech span {
+    font-size: 0.75rem;
+    padding: 0.4rem 0.8rem;
+  }
+
+  .project-content h3 {
+    font-size: 1.2rem;
   }
 }
