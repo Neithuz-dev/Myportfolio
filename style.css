@@ -1086,9 +1086,16 @@ body {
 .project-image img {
   width: 100%;
   height: 100%;
-  object-fit: scale-down;
-  background: transparent;
+  object-fit: contain;
+  object-position: center;
+  background: var(--bg-tertiary);
   transition: transform 0.5s ease; 
+}
+
+.project-group-header {
+  margin-top: 6rem;
+  padding-top: 2rem;
+  border-top: 1px solid var(--border-color);
 }
 
 .project-overlay {
