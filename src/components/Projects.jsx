@@ -36,6 +36,17 @@ export default function Projects() {
                 <span><i className="fas fa-sitemap"></i> Data Modeling</span>
                 <span><i className="fas fa-chart-pie"></i> KPI Dashboards</span>
               </div>
+              <div className="project-links">
+                <a
+                  href="https://github.com/Neithuz-dev/AI_Roi_Analytics_Dashboard"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="project-link"
+                >
+                  <i className="fab fa-github"></i>
+                  <span>View on GitHub</span>
+                </a>
+              </div>
             </div>
           </div>
 
@@ -204,36 +215,36 @@ export default function Projects() {
                   <span>View on GitHub</span>
                 </a>
               </div>
-</div>
-</div>
-{/* Academic Project 4: Elora – MERN TypeScript e‑commerce Study */}
-            <div className="project-card" data-aos="fade-up" data-aos-delay="300">
-              <div className="project-image">
-                <img src="assests/elora_mockup.png" alt="Elora MERN e‑commerce" />
-                <div className="project-overlay"></div>
-              </div>
-              <div className="project-content">
-                <span className="project-tag">MERN &amp; TypeScript</span>
-                <h3>Elora – Study e‑commerce Site</h3>
-                <p>
-                  Self‑study full‑stack project building a MERN (MongoDB, Express, React, Node.js) e‑commerce platform using TypeScript. Covers authentication, product CRUD, cart management, deployment, and Razorpay demos.
-                </p>
-                <div className="project-tech">
-                  <span><i className="fab fa-react"></i> React</span>
-                  <span><i className="fab fa-node-js"></i> Node.js</span>
-                  <span><i className="fas fa-database"></i> MongoDB</span>
-                  <span><i className="fas fa-code"></i> TypeScript</span>
-                </div>
-                <div className="project-links">
-                  <a href="https://github.com/Neithuz-dev/Elora-Everything-She-Needs-All-in-One-Place" target="_blank" rel="noopener noreferrer" className="project-link">
-                    <i className="fab fa-github"></i>
-                    <span>View on GitHub</span>
-                  </a>
-                </div>
-              </div>
-              </div>            
-        </div>
             </div>
+          </div>
+          {/* Academic Project 4: Elora – MERN TypeScript e‑commerce Study */}
+          <div className="project-card" data-aos="fade-up" data-aos-delay="300">
+            <div className="project-image">
+              <img src="assests/elora_mockup.png" alt="Elora MERN e‑commerce" />
+              <div className="project-overlay"></div>
+            </div>
+            <div className="project-content">
+              <span className="project-tag">MERN &amp; TypeScript</span>
+              <h3>Elora – Study e‑commerce Site</h3>
+              <p>
+                Self‑study full‑stack project building a MERN (MongoDB, Express, React, Node.js) e‑commerce platform using TypeScript. Covers authentication, product CRUD, cart management, deployment, and Razorpay demos.
+              </p>
+              <div className="project-tech">
+                <span><i className="fab fa-react"></i> React</span>
+                <span><i className="fab fa-node-js"></i> Node.js</span>
+                <span><i className="fas fa-database"></i> MongoDB</span>
+                <span><i className="fas fa-code"></i> TypeScript</span>
+              </div>
+              <div className="project-links">
+                <a href="https://github.com/Neithuz-dev/Elora-Everything-She-Needs-All-in-One-Place" target="_blank" rel="noopener noreferrer" className="project-link">
+                  <i className="fab fa-github"></i>
+                  <span>View on GitHub</span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
 
     </section>
   );

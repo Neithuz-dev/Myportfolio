@@ -56,8 +56,10 @@ A modern, high-performance, neon-cyberpunk personal portfolio built with **React
 1. **AI Usage & ROI Analytics Dashboard** *(Power BI & Business Intelligence)*
    - Interactive 3-page executive Power BI dashboard analyzing AI tool usage, cost ($85.52K), and business value ($399.83K) with an ROI of 367.5% across departments, tools, and models.
    - Built a star-schema model with 2 fact tables, 3 dimension tables, and a DAX Calendar.
+- *(Dashboard code resides in the `AI_Roi_Analytics_Dashboard` submodule folder.)*
    - Measures created with `SUMX`, `RELATED`, `DIVIDE`, `DATEADD`, and `RANKX`.
    - Visuals: Cost vs. value combo charts, MoM waterfall chart, provider cost donut, department funnel, team ROI bars, and model cost treemaps.
+   [GitHub Repository](https://github.com/Neithuz-dev/AI_Roi_Analytics_Dashboard)
 
 2. **Retail Sales Analytics Dashboard** *(Power BI & Business Intelligence)*
    - Analyzed retail performance across global countries, product categories, and customer segments.
